@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            CovidAI
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+    <style type="text/css">
+    .container{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: royalblue;
+        text-align: center;
+    }
+    </style>
+    <body style="background-color: black;">
+
+<!--
+        <H1> {{selectedcountry}}</H1>
+        <p>New Cases : {{new_cases}}</p>
+        <p>Active Cases : {{active_cases}}</p>
+        <p>Recovered Cases : {{recovered_cases}}</p>
+        <p>Critical Cases : {{critical_cases}}</p>
+        <p>Total Cases : {{total_cases}}</p>
+        <p>Deaths : {{deaths}}</p>
+-->
+        <h1 style="color: chartreuse;text-align: center;margin-top: 40px;"><span style="color: red;">COVID-19</span> Data Analysis</h1>
+        <form method='post' style="margin-top: 50px;" class="d-flex justify-content-center align-items-center" action="">
+            {% csrf_token %}
+            <select class="form-control" style="width: 200px;" name="selectedcountry">
+                {% for country in countries %}
+                <option>{{country}}</option>
+                {% endfor %}  
+            </select>
+            <input type='submit' class="btn btn-danger" name="">
+        </form>
+
+        <h1 style="color: rgb(255, 115, 0); margin-top: 100px; margin-bottom: 40px; text-align: center;">{{selectedcountry}}</h1>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="container" style="height: 100px; width: 200px;">
+            <h1 style="color: rgb(255, 0, 0);text-align: center;">{{total_cases}}</h1>
+            <p style="color: rgb(17, 0, 255);text-align: center;">Total Cases</p>
+            </div>
+            <div class="container" style="height: 100px; width: 200px;">
+                <h1 style="color: rgb(255, 0, 0);text-align: center;">{{active_cases}}</h1>
+                <p style="color: rgb(17, 0, 255);text-align: center;">Active Cases</p>
+            </div>
+            <div class="container" style="height: 100px; width: 200px;">
+                <h1 style="color: rgb(255, 0, 0);text-align: center;">{{recovered_cases}}</h1>
+                <p style="color: rgb(17, 0, 255);text-align: center;">Recovered Cases</p>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="container" style="height: 100px; width: 200px;">
+                <h1 style="color: rgb(255, 0, 0);text-align: center;">{{new_cases}}</h1>
+                <p style="color: rgb(17, 0, 255);text-align: center;">New Cases</p>
+                </div>
+                <div class="container" style="height: 100px; width: 200px;">
+                    <h1 style="color: rgb(255, 0, 0);text-align: center;">{{critical_cases}}</h1>
+                    <p style="color: rgb(17, 0, 255);text-align: center;">Critical Cases</p>
+                </div>
+                <div class="container" style="height: 100px; width: 200px;">
+                    <h1 style="color: rgb(255, 0, 0);text-align: center;">{{deaths}}</h1>
+                    <p style="color: rgb(17, 0, 255);text-align: center;">Deaths</p>
+                </div>
+        </div>
+        <div class="footer">
+        <p>Developed By <span style="color: darkorchid;">Nikunj Bansal</span></p>
+        </div>
+      <!--  
+        {% for country in countries %}
+        <h3>{{country}}</h3>
+        {% endfor %} 
+
+          {{response}}
+        {% for mylistitem in mylistitems %}
+        <h3>{{mylistitem}}</h3>
+        {% endfor %}
+        <h1>Hello World! {{string}}</h1>
+        <a href="#" class="btn btn-danger">my button</a>-->
+    </body>
+</html>
