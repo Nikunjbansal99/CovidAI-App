@@ -5,8 +5,8 @@ import json
 url = "https://covid-193.p.rapidapi.com/statistics"
 
 headers = {
-    'x-rapidapi-key': "18fefe92ffmshb7cdd1058c970c5p1f50a4jsn5f8d46e36e0f",
-    'x-rapidapi-host': "covid-193.p.rapidapi.com"
+    'x-rapidapi-key': "", #ENTER YOUR CREDENTIALS
+    'x-rapidapi-host': "" #ENTER YOUR CREDENTIALS
     }
 
 response = requests.request("GET", url, headers=headers).json()
